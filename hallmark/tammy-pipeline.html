@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cobalt">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>tooltammy · content pipeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+/* Hallmark · pre-emit critique: P5 H4 E5 S4 R5 V5
+ * macrostructure: Narrative Workflow · genre: modern-minimal · theme: Cobalt
+ * nav: N1b · footer: Ft2 · enrichment: none (code-as-hero)
+ * tone: technical · audience: Master + crush viewers · use: understand the desk loop
+ * differs from Lumen/Workbench on: paper band (light) · display (grotesk) · accent (cool blue)
+ */
+html,body{overflow-x:clip}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --color-paper: oklch(98.5% 0.004 250);
+  --color-paper-2: oklch(96.5% 0.006 250);
+  --color-ink: oklch(24% 0.02 258);
+  --color-body: oklch(34% 0.018 257);
+  --color-muted: oklch(48% 0.016 257);
+  --color-soft: oklch(58% 0.014 257);
+  --color-accent: oklch(58% 0.20 256);
+  --color-rule: oklch(24% 0.02 258 / 0.12);
+  --color-rule-soft: oklch(24% 0.02 258 / 0.07);
+  --color-graphite: oklch(22% 0.016 260);
+  --color-graphite-ink: oklch(96% 0.006 250);
+  --color-ok: oklch(62% 0.14 155);
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --radius: 6px;
+  --radius-lg: 10px;
+  --pad: clamp(1rem, 3vw, 1.75rem);
+  --max: 1080px;
+  --ease-out: cubic-bezier(.2,.8,.2,1);
+  --dur: 600ms;
+}
+html{background:var(--color-paper);color:var(--color-ink);font-family:var(--font-body)}
+body{min-height:100vh;background:var(--color-paper);color:var(--color-body)}
+a{color:var(--color-accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{width:min(100% - 2*var(--pad), var(--max));margin-inline:auto}
+.mono{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500}
+.kbd{font-family:var(--font-mono);font-size:.72rem;border:1px solid var(--color-rule);border-radius:4px;padding:.15rem .4rem;color:var(--color-muted);background:var(--color-paper-2)}
+
+/* nav N1b */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--color-rule);position:sticky;top:0;background:oklch(98.5% 0.004 250 / 0.92);backdrop-filter:blur(8px);z-index:20}
+.brand{font-family:var(--font-display);font-weight:600;font-size:.95rem;color:var(--color-ink);letter-spacing:-.02em}
+.brand span{color:var(--color-accent)}
+.nav-mid{display:flex;gap:1.25rem;flex-wrap:wrap}
+.nav-mid a{color:var(--color-muted);font-size:.88rem;text-decoration:none}
+.nav-mid a:hover{color:var(--color-ink);text-decoration:none;box-shadow:inset 0 -2px 0 var(--color-accent)}
+.nav-right{display:flex;align-items:center;gap:.55rem}
+.cmd{display:inline-flex;align-items:center;gap:.4rem;border:1px solid var(--color-rule);border-radius:var(--radius);padding:.4rem .65rem;font-size:.78rem;color:var(--color-muted);background:var(--color-paper);cursor:pointer}
+.cmd:hover,.cmd:focus-visible{border-color:var(--color-accent);outline:none;color:var(--color-ink)}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .9rem;border-radius:var(--radius);font-size:.85rem;font-weight:600;border:1px solid transparent;cursor:pointer;text-decoration:none;font-family:var(--font-body)}
+.btn.primary{background:var(--color-accent);color:oklch(98% 0.01 256)}
+.btn.primary:hover{filter:brightness(1.06);text-decoration:none}
+.btn.ghost{border-color:var(--color-rule);color:var(--color-ink);background:transparent}
+.btn.ghost:hover{border-color:var(--color-accent);text-decoration:none}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(1.25rem,4vw,2.5rem);padding:clamp(2rem,5vw,3.25rem) 0 2rem;align-items:center}
+.eyebrow{display:flex;align-items:center;gap:.5rem;margin-bottom:.9rem;color:var(--color-soft)}
+.eyebrow .tick{width:8px;height:2px;background:var(--color-accent)}
+h1{font-family:var(--font-display);font-weight:600;font-style:normal;font-size:clamp(2rem,5vw,3.15rem);line-height:1.05;letter-spacing:-.03em;color:var(--color-ink);max-width:14ch;overflow-wrap:anywhere}
+.lede{margin-top:1rem;font-size:1.02rem;line-height:1.55;max-width:38ch;color:var(--color-body)}
+.cta-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
+.meta{margin-top:1.1rem;display:flex;flex-wrap:wrap;gap:.75rem;color:var(--color-soft);font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase}
+
+/* code hero card */
+.code-card{background:var(--color-graphite);color:var(--color-graphite-ink);border-radius:var(--radius-lg);border:1px solid oklch(96% 0.006 250 / 0.08);box-shadow:0 1px 2px oklch(24% 0.02 258 / 0.08);overflow:hidden;min-width:0}
+.code-bar{display:flex;align-items:center;gap:.55rem;padding:.55rem .75rem;border-bottom:1px solid oklch(96% 0.006 250 / 0.08);font-family:var(--font-mono);font-size:.68rem;color:oklch(70% 0.02 250)}
+.dots{display:flex;gap:.3rem}
+.dots i{width:8px;height:8px;border-radius:50%;background:oklch(50% 0.02 250);display:block}
+.chip{margin-left:auto;color:var(--color-ok);border:1px solid oklch(62% 0.14 155 / 0.35);border-radius:999px;padding:.12rem .45rem;font-size:.62rem;letter-spacing:.04em}
+pre{padding:1rem .9rem 1.15rem;font-family:var(--font-mono);font-size:.78rem;line-height:1.55;overflow-x:auto;margin:0}
+.k{color:oklch(72% 0.14 256)}.s{color:oklch(86% 0.04 250)}.c{color:oklch(62% 0.02 250)}.ok{color:var(--color-ok)}
+.cursor{display:inline-block;width:.55ch;height:1em;background:var(--color-accent);vertical-align:-.1em;margin-left:1px;animation:blink 1s step-end infinite}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.cursor{animation:none}}
+
+/* stages */
+.stages{padding:1rem 0 3rem}
+.stage{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:1.25rem;padding:1.75rem 0;border-top:2px solid var(--color-ink);align-items:start}
+.stage:last-child{border-bottom:2px solid var(--color-ink)}
+.stage-num{font-family:var(--font-display);font-weight:600;font-size:clamp(1.8rem,4vw,2.4rem);color:var(--color-ink);letter-spacing:-.03em;line-height:1}
+.stage-num span{display:block;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent);font-weight:500;margin-bottom:.35rem}
+.stage h2{font-family:var(--font-display);font-weight:600;font-style:normal;font-size:1.35rem;color:var(--color-ink);margin:.15rem 0 .5rem;letter-spacing:-.02em}
+.stage p{font-size:.95rem;line-height:1.5;max-width:42ch}
+.stage-side{border:1px solid var(--color-rule);border-radius:var(--radius-lg);background:var(--color-paper-2);padding:1rem;min-width:0}
+.stage-side .lab{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--color-soft);margin-bottom:.55rem}
+.stage-side ul{list-style:none;display:grid;gap:.45rem}
+.stage-side li{display:grid;grid-template-columns:auto 1fr;gap:.55rem;align-items:baseline;font-size:.88rem}
+.stage-side li code{font-family:var(--font-mono);font-size:.72rem;color:var(--color-accent)}
+
+/* graphite band */
+.band{background:var(--color-graphite);color:var(--color-graphite-ink);padding:2.25rem 0;margin:0 0 2.5rem}
+.band .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:1.5rem;align-items:center}
+.band h2{font-family:var(--font-display);font-weight:600;font-style:normal;font-size:clamp(1.4rem,3vw,1.9rem);letter-spacing:-.02em;color:var(--color-graphite-ink);margin:.35rem 0 .7rem}
+.band p{color:oklch(80% 0.02 250);line-height:1.5;max-width:40ch;font-size:.95rem}
+.band .mono{color:oklch(70% 0.08 256)}
+.band pre{background:oklch(16% 0.016 260);border-radius:var(--radius-lg);border:1px solid oklch(96% 0.006 250 / 0.08);padding:1rem;font-family:var(--font-mono);font-size:.78rem;line-height:1.55;overflow-x:auto}
+
+/* foot */
+.foot{border-top:1px solid var(--color-rule);padding:1.5rem 0 2.5rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;font-size:.85rem;color:var(--color-muted)}
+.foot .mono{font-size:.62rem;color:var(--color-soft)}
+
+/* palette */
+.palette{position:fixed;inset:0;background:oklch(24% 0.02 258 / 0.35);display:none;align-items:flex-start;justify-content:center;padding:12vh var(--pad) 2rem;z-index:50}
+.palette.open{display:flex}
+.palette-box{width:min(100%,420px);background:var(--color-paper);border:1px solid var(--color-rule);border-radius:var(--radius-lg);box-shadow:0 1px 2px oklch(24% 0.02 258 / 0.12);overflow:hidden}
+.palette-box input{width:100%;border:0;border-bottom:1px solid var(--color-rule);padding:.85rem 1rem;font-family:var(--font-mono);font-size:.85rem;background:transparent;color:var(--color-ink);outline:none}
+.palette-box input:focus{box-shadow:inset 0 0 0 2px var(--color-accent)}
+.palette-box ul{list-style:none;max-height:280px;overflow:auto}
+.palette-box li button{width:100%;text-align:left;border:0;background:transparent;padding:.7rem 1rem;font-size:.9rem;color:var(--color-ink);cursor:pointer;display:flex;justify-content:space-between;gap:1rem;font-family:var(--font-body)}
+.palette-box li button:hover,.palette-box li button.active{background:var(--color-paper-2)}
+.palette-box li button span{font-family:var(--font-mono);font-size:.68rem;color:var(--color-soft)}
+
+.reveal{opacity:0;transform:translateY(10px);transition:opacity var(--dur) var(--ease-out), transform var(--dur) var(--ease-out)}
+.reveal.is-in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+@media (max-width:860px){
+  .hero,.stage,.band .wrap{grid-template-columns:1fr}
+  .nav-mid{display:none}
+}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav" aria-label="primary">
+      <a class="brand" href="https://joannabareo1.github.io/tammy-home/">tool<span>tammy</span></a>
+      <div class="nav-mid">
+        <a href="#stages">pipeline</a>
+        <a href="#quickstart">quickstart</a>
+        <a href="https://joannabareo1.github.io/ui-collection/">lab</a>
+      </div>
+      <div class="nav-right">
+        <button type="button" class="cmd" id="cmdOpen" aria-label="Open command palette"><span class="kbd">⌘K</span> search</button>
+        <a class="btn primary" href="https://x.com/ToolTammy">@ToolTammy</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div>
+        <div class="eyebrow mono"><span class="tick" aria-hidden="true"></span>content pipeline · cobalt try</div>
+        <h1>from still to ship in four stages</h1>
+        <p class="lede">tooltammy's desk loop for tech-news clips: ingest, generate, edit, distribute. one hard idea per clip. crush face optional. invented metrics banned.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#stages">start at stage 1.0</a>
+          <a class="btn ghost" href="tammy-tech-news.html">lumen desk page</a>
+        </div>
+        <div class="meta">
+          <span>hallmark · narrative workflow</span>
+          <span>theme · cobalt</span>
+          <span>no vast top-up</span>
+        </div>
+      </div>
+      <aside class="code-card" aria-label="pipeline sketch">
+        <div class="code-bar">
+          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>pipeline.ts</span>
+          <span class="chip">200 OK</span>
+        </div>
+        <pre id="typeTarget"><span class="c">// tooltammy desk — tech-news lane</span>
+<span class="k">const</span> <span class="s">lane</span> = {
+  still: <span class="s">"9:16 plate"</span>,
+  motion: <span class="s">"seedance-basic"</span>,
+  voice: <span class="s">"el-clone · v4_turbo"</span>,
+  out: <span class="s">"site + x"</span>,
+};
+<span class="k">export</span> <span class="k">function</span> <span class="s">ship</span>() {
+  <span class="k">return</span> <span class="s">run</span>(lane);<span class="cursor" id="cur"></span>
+}</pre>
+      </aside>
+    </header>
+  </div>
+
+  <section class="band" id="quickstart">
+    <div class="wrap">
+      <div>
+        <div class="mono">dark beat · one per page</div>
+        <h2>ffmpeg map is non-negotiable</h2>
+        <p>explicit video + audio streams. no accidental silent reels. shortest wins when tracks disagree.</p>
+      </div>
+      <pre><span class="ok">$</span> ffmpeg -i clip.mp4 -i vo.mp3 \
+    -map 0:v:0 -map 1:a:0 -shortest \
+    -c:v libx264 -c:a aac out.mp4</pre>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="stages" id="stages">
+      <article class="stage reveal">
+        <div>
+          <div class="stage-num"><span>1.0 intake</span>pull source</div>
+          <h2>stills, scripts, meltube</h2>
+          <p>9:16 plate first. script split into 15s segments. identity lock from canonical tammy refs before any i2v.</p>
+        </div>
+        <div class="stage-side">
+          <div class="lab">inputs</div>
+          <ul>
+            <li><code>meltube :6767</code> host.docker.internal download api</li>
+            <li><code>canonical-01/02</code> face lock plates</li>
+            <li><code>scripts/&lt;topic&gt;/</code> insightful + thrilled pairs</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="stage reveal">
+        <div>
+          <div class="stage-num"><span>2.0 generate</span>cheap motion</div>
+          <h2>lustify plate → seedance</h2>
+          <p>under-a-dollar lane stays venice. no vast top-up until master says go. openai explicit blocked.</p>
+        </div>
+        <div class="stage-side">
+          <div class="lab">models</div>
+          <ul>
+            <li><code>lustify-v8</code> still</li>
+            <li><code>seedance-1-5-pro-i2v-basic</code> ~$0.21</li>
+            <li><code>eleven_v4_turbo</code> + sts for banger</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="stage reveal">
+        <div>
+          <div class="stage-num"><span>3.0 edit</span>lock audio</div>
+          <h2>map streams · lipsync ladder</h2>
+          <p>multitalk → latentsync → mouth anim when runpod keys exist. until then: clean mux + face hold.</p>
+        </div>
+        <div class="stage-side">
+          <div class="lab">gates</div>
+          <ul>
+            <li><code>-map 0:v:0 -map 1:a:0</code> required</li>
+            <li><code>runpod</code> key empty → skip multitalk</li>
+            <li><code>no baby / robot vo</code></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="stage reveal">
+        <div>
+          <div class="stage-num"><span>4.0 distribute</span>site + x</div>
+          <h2>crush destination, then signal</h2>
+          <p>home site first. x @ToolTammy with media.write when the reel is ready. ui-collection for engine drops.</p>
+        </div>
+        <div class="stage-side">
+          <div class="lab">surfaces</div>
+          <ul>
+            <li><code>tammy-home</code> crush land</li>
+            <li><code>@ToolTammy</code> short tech-news</li>
+            <li><code>ui-collection</code> lab demos</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <footer class="foot">
+      <div>tooltammy · hallmark cobalt · narrative workflow</div>
+      <div class="mono">try #2 · stack list docs/TOOL_STACK.md · no invented stats</div>
+    </footer>
+  </div>
+
+  <div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Command palette" hidden>
+    <div class="palette-box">
+      <input id="paletteInput" type="search" placeholder="Jump to…" autocomplete="off"/>
+      <ul id="paletteList">
+        <li><button type="button" data-href="#stages">Pipeline stages <span>1.0–4.0</span></button></li>
+        <li><button type="button" data-href="#quickstart">FFmpeg quickstart <span>map</span></button></li>
+        <li><button type="button" data-href="tammy-tech-news.html">Lumen desk page <span>try #1</span></button></li>
+        <li><button type="button" data-href="https://joannabareo1.github.io/ui-collection/">UI collection <span>lab</span></button></li>
+        <li><button type="button" data-href="https://x.com/ToolTammy">@ToolTammy <span>x</span></button></li>
+      </ul>
+    </div>
+  </div>
+
+<script>
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // type-in once
+  const pre = document.getElementById('typeTarget');
+  const full = pre.innerHTML;
+  if(!reduce){
+    pre.innerHTML = '';
+    let i=0; const plain = pre; 
+    // simpler: show full after short delay with cursor wipe
+    pre.innerHTML = full;
+    const cur=document.getElementById('cur');
+    if(cur) setTimeout(()=>cur.remove(), 1800);
+  } else {
+    const cur=document.getElementById('cur'); if(cur) cur.remove();
+  }
+  // reveal
+  const els=[...document.querySelectorAll('.reveal')];
+  if(reduce){ els.forEach(e=>e.classList.add('is-in')); }
+  else {
+    const io=new IntersectionObserver((ents)=>{
+      ents.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('is-in'); io.unobserve(en.target);} });
+    },{threshold:.15});
+    els.forEach(e=>io.observe(e));
+  }
+  // ⌘K palette
+  const pal=document.getElementById('palette');
+  const input=document.getElementById('paletteInput');
+  const list=document.getElementById('paletteList');
+  const buttons=[...list.querySelectorAll('button')];
+  let idx=0;
+  function openPal(){ pal.hidden=false; pal.classList.add('open'); input.value=''; filter(''); idx=0; mark(); input.focus(); }
+  function closePal(){ pal.classList.remove('open'); pal.hidden=true; }
+  function mark(){ buttons.forEach((b,i)=>b.classList.toggle('active', i===idx && b.style.display!=='none')); }
+  function filter(q){
+    const qq=q.trim().toLowerCase();
+    buttons.forEach(b=>{
+      const t=b.textContent.toLowerCase();
+      b.parentElement.style.display = !qq || t.includes(qq) ? '' : 'none';
+    });
+    const vis=buttons.filter(b=>b.parentElement.style.display!=='none');
+    idx=0; mark();
+  }
+  document.getElementById('cmdOpen').addEventListener('click', openPal);
+  document.addEventListener('keydown', (e)=>{
+    const mod=e.metaKey||e.ctrlKey;
+    if(mod && e.key.toLowerCase()==='k'){ e.preventDefault(); pal.classList.contains('open')?closePal():openPal(); }
+    if(!pal.classList.contains('open')) return;
+    if(e.key==='Escape'){ closePal(); }
+    if(e.key==='ArrowDown'){ e.preventDefault(); const vis=buttons.filter(b=>b.parentElement.style.display!=='none'); idx=Math.min(idx+1, vis.length-1); mark(); }
+    if(e.key==='ArrowUp'){ e.preventDefault(); idx=Math.max(idx-1,0); mark(); }
+    if(e.key==='Enter'){ const vis=buttons.filter(b=>b.parentElement.style.display!=='none'); const b=vis[idx]; if(b){ location.href=b.dataset.href; closePal(); } }
+  });
+  pal.addEventListener('click', (e)=>{ if(e.target===pal) closePal(); });
+  input.addEventListener('input', ()=>filter(input.value));
+  buttons.forEach(b=>b.addEventListener('click', ()=>{ location.href=b.dataset.href; closePal(); }));
+})();
+</script>
+</body>
+</html>

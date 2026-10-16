@@ -1,0 +1,290 @@
+{
+  "updated": "2026-10-16T14:28:30Z",
+  "entries": [
+    {
+      "id": "hallmark",
+      "kind": "agent-skill",
+      "title": "hallmark",
+      "subtitle": "Anti-slop design \u00b7 Lumen + Cobalt tried",
+      "description": "Nutlope/hallmark (Together AI). Design skill that refuses default LLM UI. Installed under Hermes creative/. Demo = ToolTammy desk-signal landing in Lumen Night (tech-news energy + crush face).",
+      "topic": [
+        "design",
+        "ui",
+        "anti-slop",
+        "landing",
+        "hallmark",
+        "tammy",
+        "tech-news"
+      ],
+      "runtime": "agent-skill-html",
+      "source": "https://github.com/Nutlope/hallmark",
+      "docs": "https://www.usehallmark.com",
+      "demo": "hallmark/demo.html",
+      "demo_html": "hallmark/tammy-pipeline.html",
+      "local": "hallmark/",
+      "vendor": "vendor/hallmark",
+      "status": "installed-tried-x2",
+      "featured": true,
+      "stats": {
+        "stars": 30193,
+        "themes": 21,
+        "skill_version": "1.1.0"
+      },
+      "tammy_fit": [
+        "landing pages",
+        "tech-news desk UI",
+        "site redesigns",
+        "audit existing pages"
+      ],
+      "added": "2026-10-16",
+      "demos": [
+        "hallmark/tammy-pipeline.html",
+        "hallmark/tammy-tech-news.html"
+      ]
+    },
+    {
+      "id": "diagram-design",
+      "kind": "agent-skill",
+      "title": "diagram-design",
+      "subtitle": "Editorial HTML/SVG diagrams \u00b7 45 types",
+      "description": "cathrynlavery/diagram-design \u2014 agent skill that draws branded architecture/sequence/\u2026 as one self-contained HTML+SVG. Installed under Hermes creative/. Demo = ToolTammy content-stack architecture (Tammy pink skin, not default coral).",
+      "topic": [
+        "diagrams",
+        "svg",
+        "html",
+        "architecture",
+        "agent-skills",
+        "tammy",
+        "design"
+      ],
+      "runtime": "agent-skill-html-svg",
+      "source": "https://github.com/cathrynlavery/diagram-design",
+      "docs": "https://diagramdesign.dev",
+      "demo": "diagram-design/demo.html",
+      "demo_html": "diagram-design/tammy-content-stack.html",
+      "local": "diagram-design/",
+      "vendor": "vendor/diagram-design",
+      "status": "installed-demoed",
+      "featured": true,
+      "stats": {
+        "stars": 55953,
+        "types": 45,
+        "skill_version": "2.6"
+      },
+      "tammy_fit": [
+        "content-stack architecture",
+        "X/site explainers",
+        "pipeline docs"
+      ],
+      "added": "2026-10-16"
+    },
+    {
+      "id": "dcc-mcp-core",
+      "kind": "mcp-control-plane",
+      "title": "dcc-mcp-core",
+      "subtitle": "Agent \u2194 creative software MCP gateway",
+      "description": "Rust+Python skill-first control plane (Daniel Korna\u015b / dcc-mcp). One MCP/REST gateway for ComfyUI, CapCut, TouchDesigner, OBS, AE, Premiere, Blender, and 40+ hosts. Installed core 0.20.44 + server 0.20.45; gateway health proved.",
+      "topic": [
+        "mcp",
+        "dcc",
+        "comfyui",
+        "capcut",
+        "touchdesigner",
+        "obs",
+        "video",
+        "agents",
+        "tammy"
+      ],
+      "runtime": "mcp-rest-rust",
+      "source": "https://github.com/dcc-mcp/dcc-mcp-core",
+      "docs": "https://dcc-mcp.github.io/dcc-mcp-core/",
+      "demo": "dcc-mcp-core/demo.html",
+      "local": "dcc-mcp-core/",
+      "vendor": "vendor/dcc-mcp-core",
+      "status": "installed-gateway-proved",
+      "featured": true,
+      "stats": {
+        "core": "0.20.44",
+        "server": "0.20.45",
+        "adapters": 47,
+        "tammy_fit": 12
+      },
+      "tammy_fit": [
+        "dcc-mcp-kdenlive",
+        "dcc-mcp-blender",
+        "dcc-mcp-photoshop",
+        "dcc-mcp-premiere",
+        "dcc-mcp-aftereffects",
+        "dcc-mcp-gimp",
+        "dcc-mcp-krita",
+        "dcc-mcp-obs",
+        "dcc-mcp-comfyui",
+        "dcc-mcp-touchdesigner",
+        "dcc-mcp-capcut",
+        "dcc-mcp-openscreen"
+      ],
+      "linkedin": "https://lnkd.in/p/giHGGZqy",
+      "install": {
+        "venv": "tooltammy/vendor/dcc-mcp-venv",
+        "packages": [
+          "dcc-mcp-core==0.20.44",
+          "dcc-mcp-server==0.20.45"
+        ],
+        "prove": "dcc-mcp-server gateway \u2192 GET /health ok"
+      },
+      "added": "2026-10-15"
+    },
+    {
+      "id": "skills-md",
+      "kind": "agent-skills-platform",
+      "title": "skills.md",
+      "subtitle": "Hosted API skills for agents (Hasna)",
+      "description": "Install @hasna/skills CLI, sign in, run hosted skills (logo-design, short-video-pack, brand-kit, social-content-calendar\u2026). Wired for ToolTammy content ops. Free trial + pay-per-run credits.",
+      "topic": [
+        "skills",
+        "agents",
+        "mcp",
+        "content",
+        "video",
+        "brand",
+        "tammy"
+      ],
+      "runtime": "cli-mcp",
+      "source": "https://skills.md",
+      "docs": "https://skills.md",
+      "demo": "skills-md/demo.html",
+      "local": "skills-md/",
+      "status": "cli-installed-awaiting-login",
+      "tammy_fit": [
+        "short-video-pack (500 cr)",
+        "logo-design (50 cr)",
+        "brand-kit (400 cr)",
+        "social-content-calendar (300 cr)",
+        "video-highlight-pack (300 cr)",
+        "voiceover-jingle-pack (250 cr)",
+        "generate-social-posts (free skill, hosted may gate)",
+        "caption-style-stylist"
+      ],
+      "install": {
+        "cli": "@hasna/skills@0.10.70",
+        "bun": "1.4.3",
+        "bin": [
+          "skills",
+          "skills-mcp"
+        ],
+        "login": "skills login --device"
+      }
+    },
+    {
+      "id": "awesome-opus5-5-videos",
+      "kind": "prompt-pack",
+      "title": "Awesome Opus 5.5 Videos",
+      "subtitle": "703 viral Claude Opus motion prompts",
+      "description": "Growing collection of viral videos made as code (HTML/Canvas/SVG/Three.js) with Claude Opus 5.5 + the prompts. We remade a 15s ToolTammy showreel from the classic 'go all out motion designer' pattern (SVG/GSAP).",
+      "topic": [
+        "motion",
+        "prompts",
+        "opus",
+        "threejs",
+        "gsap",
+        "ai-video"
+      ],
+      "runtime": "html-gsap",
+      "source": "https://github.com/yihui-dev/awesome-opus5-5-videos",
+      "docs": "https://skillry.dev/ai-videos/opus-5-5",
+      "stats": {
+        "stars": 4814,
+        "prompts": 703,
+        "categories": {
+          "motion": 369,
+          "explainer": 116,
+          "3d": 117,
+          "interactive": 101
+        }
+      },
+      "featured": true,
+      "status": "demoed",
+      "demo": "awesome-opus5-5/demo.html",
+      "demo_video": "awesome-opus5-5/remakes/tammy-showreel-15s.mp4",
+      "demo_html": "awesome-opus5-5/remakes/tammy-showreel.html",
+      "local_path": "vendor/awesome-opus5-5-videos",
+      "added": "2026-10-13"
+    },
+    {
+      "id": "manimgx",
+      "kind": "tool",
+      "title": "ManimGX",
+      "subtitle": "The Animation Engine for Agents",
+      "description": "Blazingly fast 3D/math animation engine compatible with Manim CE API. Rust + wgpu GPU core. ~90\u00d7 faster than ManimCE. Agent-install via prompt or pip.",
+      "topic": [
+        "animation",
+        "math",
+        "agents",
+        "video",
+        "rust"
+      ],
+      "runtime": "python>=3.13",
+      "source": "https://github.com/academa-labs/manimgx",
+      "docs": "https://manimgx.academa.ai",
+      "hn": "https://news.ycombinator.com/item?id=50037852",
+      "spotted": "GithubSig / Facebook post 2026-10",
+      "source_image": "manimgx/source-spot.jpg",
+      "demo_video": "manimgx/tammy-manimgx-demo.mp4",
+      "demo_script": "manimgx/tammy_manimgx_demo.py",
+      "stats": {
+        "stars": 1116,
+        "pypi": "0.1.1"
+      },
+      "featured": true,
+      "status": "demoed",
+      "added": "2026-10-13"
+    },
+    {
+      "id": "social-media-skills",
+      "kind": "skill-pack",
+      "title": "Social Media Skills",
+      "subtitle": "17 agent skills for LinkedIn / Reels / hooks",
+      "description": "Charlie Hills public skill pack for Codex/Claude: voice-builder, post-writer, reels-scripting, hook-generator, content-matrix, gemini carousels, analytics dashboard. 4k+ stars. Installed into Hermes social-media skills.",
+      "topic": [
+        "social",
+        "linkedin",
+        "reels",
+        "hooks",
+        "agents",
+        "skills"
+      ],
+      "runtime": "markdown-skills",
+      "source": "https://github.com/charlie947/social-media-skills",
+      "docs": "https://github.com/charlie947/social-media-skills#readme",
+      "stats": {
+        "stars": 4048,
+        "skills": 17
+      },
+      "skill_list": [
+        "analytics-dashboard",
+        "content-matrix",
+        "gemini-carousel",
+        "gemini-infographic",
+        "graphic-designer",
+        "hook-generator",
+        "newsletter-voice",
+        "niche-research",
+        "pinned-comment",
+        "post-formatter",
+        "post-scorer",
+        "post-writer",
+        "profile-optimizer",
+        "quote-post",
+        "reels-scripting",
+        "voice-builder",
+        "youtube-thumbnail"
+      ],
+      "featured": true,
+      "status": "installed",
+      "demo": "social-media-skills/demo.html",
+      "banner": "social-media-skills/banner.svg",
+      "local_path": "vendor/social-media-skills + profiles/nico/skills/social-media/*",
+      "added": "2026-10-13"
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>tooltammy · desk signal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V4
+   theme=lumen drop=night macro=workbench genre=editorial
+   brief=ToolTammy tech-news crush desk · no invented metrics */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+:root{
+  --color-paper: oklch(13% 0.014 265);
+  --color-paper-2: oklch(16% 0.016 265);
+  --color-ink: oklch(96% 0.006 262);
+  --color-muted: oklch(72% 0.02 262);
+  --color-soft: oklch(58% 0.02 262);
+  --color-accent: oklch(76% 0.17 50);
+  --color-accent-2: oklch(68% 0.16 18);
+  --color-glow: oklch(80% 0.16 50 / 0.42);
+  --color-paper-emit: oklch(76% 0.17 50 / 0.04);
+  --color-rule: oklch(96% 0.006 262 / 0.10);
+  --color-rule-soft: oklch(96% 0.006 262 / 0.05);
+  --color-link: oklch(78% 0.12 155);
+  --font-display: 'Instrument Serif', ui-serif, Georgia, serif;
+  --font-body: 'Geist', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, monospace;
+  --radius: 8px;
+  --pad: clamp(1.1rem, 3vw, 2rem);
+  --max: 1120px;
+}
+html{background:var(--color-paper);color:var(--color-ink);font-family:var(--font-body)}
+body{min-height:100vh;background:
+  radial-gradient(900px 420px at 78% 12%, var(--color-paper-emit), transparent 60%),
+  var(--color-paper)}
+a{color:var(--color-link);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{width:min(100% - 2*var(--pad), var(--max));margin-inline:auto}
+.mono{font-family:var(--font-mono);letter-spacing:.14em;text-transform:uppercase;font-size:.68rem;font-weight:500;color:var(--color-soft)}
+.rule{border:0;border-top:1px solid var(--color-rule);margin:0}
+
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--color-rule)}
+.brand{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--color-ink)}
+.brand span{color:var(--color-accent)}
+.nav-links{display:flex;gap:1.25rem;flex-wrap:wrap}
+.nav-links a{color:var(--color-muted);font-size:.85rem;text-decoration:none}
+.nav-links a:hover{color:var(--color-ink)}
+.pill{border:1px solid var(--color-rule);padding:.45rem .8rem;border-radius:999px;font-size:.78rem;color:var(--color-ink);background:transparent}
+.pill:hover{border-color:var(--color-accent);color:var(--color-accent);text-decoration:none}
+
+/* workbench hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.95fr);gap:clamp(1.5rem,4vw,3rem);padding:clamp(2rem,5vw,3.5rem) 0 2.5rem;align-items:center}
+.kicker{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
+.kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--color-accent);box-shadow:0 0 12px var(--color-glow);animation:pulse 4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
+h1{font-family:var(--font-display);font-weight:400;font-style:normal;font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.02;letter-spacing:-.02em;text-transform:lowercase;max-width:14ch}
+h1 .mark{color:var(--color-accent);position:relative}
+h1 .mark::after{content:"";position:absolute;left:0;right:0;bottom:.08em;height:2px;background:var(--color-accent);opacity:.85}
+.lede{margin-top:1.1rem;color:var(--color-muted);font-size:1.05rem;line-height:1.55;max-width:36ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.btn{display:inline-flex;align-items:center;gap:.45rem;padding:.7rem 1.05rem;border-radius:var(--radius);border:1px solid var(--color-rule);font-size:.9rem;color:var(--color-ink);background:transparent;cursor:pointer;text-decoration:none}
+.btn.primary{background:var(--color-accent);color:oklch(14% 0.02 50);border-color:transparent;font-weight:600}
+.btn.primary:hover{filter:brightness(1.05);text-decoration:none}
+.btn:hover{border-color:var(--color-muted);text-decoration:none}
+.meta-row{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.4rem;color:var(--color-soft);font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase}
+
+/* apparatus panel */
+.panel{background:var(--color-paper-2);border:1px solid var(--color-rule);border-radius:12px;padding:1.1rem 1.1rem 1.25rem;position:relative;overflow:hidden}
+.panel::before{content:"";position:absolute;inset:0;background:
+  linear-gradient(var(--color-rule-soft) 1px, transparent 1px) 0 0/24px 24px,
+  linear-gradient(90deg, var(--color-rule-soft) 1px, transparent 1px) 0 0/24px 24px;
+  pointer-events:none;opacity:.7}
+.panel-head{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;margin-bottom:.9rem}
+.panel-title{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--color-soft)}
+.live{display:inline-flex;align-items:center;gap:.4rem;color:var(--color-accent);font-family:var(--font-mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase}
+.live i{width:6px;height:6px;border-radius:50%;background:var(--color-accent);display:block;box-shadow:0 0 10px var(--color-glow)}
+.apparatus{position:relative;z-index:1;height:220px;display:grid;place-items:center}
+.chamber{width:min(100%,220px);height:180px;border:1px solid var(--color-rule);border-radius:18px;background:oklch(10% 0.02 265);position:relative;overflow:hidden;box-shadow:inset 0 0 40px oklch(76% 0.17 50 / 0.08)}
+.filament{position:absolute;left:50%;top:18px;bottom:18px;width:4px;transform:translateX(-50%);background:linear-gradient(to bottom, transparent, var(--color-accent), transparent);box-shadow:0 0 18px var(--color-glow),0 0 40px var(--color-glow);animation:pulse 4s ease-in-out infinite;border-radius:2px}
+.electrode{position:absolute;left:18%;right:18%;height:1px;background:oklch(96% 0.006 262 / 0.22)}
+.electrode:nth-child(2){top:28%}.electrode:nth-child(3){top:48%}.electrode:nth-child(4){top:68%}
+.callouts{position:relative;z-index:1;display:grid;gap:.45rem;margin-top:.85rem}
+.callout{display:grid;grid-template-columns:auto 1fr;gap:.55rem;align-items:baseline;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--color-soft)}
+.callout b{color:var(--color-accent);font-weight:500}
+
+/* signal strip */
+.strip{border-block:1px solid var(--color-rule);padding:1rem 0;margin:0 0 2.5rem}
+.strip-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.strip .item{min-width:0}
+.strip .lab{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--color-soft);margin-bottom:.35rem}
+.strip .val{font-size:.95rem;color:var(--color-ink);line-height:1.35;overflow-wrap:anywhere}
+
+/* sections */
+section{padding:2.4rem 0}
+section h2{font-family:var(--font-display);font-weight:400;font-style:normal;font-size:clamp(1.6rem,3.2vw,2.15rem);letter-spacing:-.02em;text-transform:lowercase;margin:.35rem 0 1.1rem}
+.sec-k{margin-bottom:.25rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.card{border:1px solid var(--color-rule);border-radius:10px;padding:1.1rem 1.15rem;background:oklch(14% 0.014 265 / 0.6);min-width:0}
+.card h3{font-size:1rem;font-weight:600;margin-bottom:.4rem;overflow-wrap:anywhere}
+.card p{color:var(--color-muted);font-size:.92rem;line-height:1.5}
+.card .tag{display:inline-block;margin-bottom:.65rem;font-family:var(--font-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent)}
+
+/* desk board */
+.board{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:1.25rem;align-items:start}
+.lane{border:1px solid var(--color-rule);border-radius:10px;overflow:hidden}
+.lane-h{padding:.7rem 1rem;border-bottom:1px solid var(--color-rule);font-family:var(--font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--color-soft);background:oklch(12% 0.014 265)}
+.lane ul{list-style:none}
+.lane li{padding:.85rem 1rem;border-bottom:1px solid var(--color-rule-soft);display:grid;gap:.25rem}
+.lane li:last-child{border-bottom:0}
+.lane li strong{font-size:.95rem;font-weight:600}
+.lane li span{color:var(--color-muted);font-size:.86rem;line-height:1.4}
+.lane li code{font-family:var(--font-mono);font-size:.72rem;color:var(--color-accent);letter-spacing:.04em}
+
+/* quote / desk note */
+.note{border-left:2px solid var(--color-accent);padding:.2rem 0 .2rem 1rem;margin:1.5rem 0 0;color:var(--color-muted);font-size:1.05rem;line-height:1.5;max-width:48ch}
+.note em{font-style:italic;color:var(--color-ink)}
+
+/* footer */
+.foot{border-top:1px solid var(--color-rule);padding:1.6rem 0 2.5rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;color:var(--color-soft);font-size:.85rem}
+.foot .mono{font-size:.62rem}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr}
+  .strip-grid{grid-template-columns:1fr 1fr}
+  .grid-3,.board{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+@media (max-width:420px){
+  .strip-grid{grid-template-columns:1fr}
+  h1{font-size:2.2rem}
+}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav" aria-label="primary">
+      <div class="brand">tool<span>tammy</span></div>
+      <div class="nav-links">
+        <a href="https://joannabareo1.github.io/tammy-home/">home</a>
+        <a href="https://joannabareo1.github.io/ui-collection/">lab</a>
+        <a href="https://x.com/ToolTammy">signal</a>
+      </div>
+      <a class="pill" href="https://x.com/ToolTammy">@ToolTammy</a>
+    </nav>
+
+    <header class="hero">
+      <div>
+        <div class="kicker">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="mono">desk signal · issue 01</span>
+        </div>
+        <h1>tech news with a <span class="mark">crush</span> face</h1>
+        <p class="lede">tooltammy reads like a night desk: agent stack, clean hooks, one hard idea — then she looks at you. not a saas brochure. not pure thirst.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="https://joannabareo1.github.io/tammy-home/">open destination</a>
+          <a class="btn" href="https://joannabareo1.github.io/ui-collection/">browse the lab</a>
+        </div>
+        <div class="meta-row">
+          <span>voice · el clone only</span>
+          <span>edit · ffmpeg 9:16</span>
+          <span>gen · venice under-$1 lane</span>
+        </div>
+      </div>
+
+      <aside class="panel" aria-label="runtime apparatus">
+        <div class="panel-head">
+          <span class="panel-title">runtime apparatus</span>
+          <span class="live"><i></i>hermes live</span>
+        </div>
+        <div class="apparatus">
+          <div class="chamber" aria-hidden="true">
+            <div class="filament"></div>
+            <div class="electrode"></div>
+            <div class="electrode"></div>
+            <div class="electrode"></div>
+          </div>
+        </div>
+        <div class="callouts">
+          <div class="callout"><b>01</b> ingest · meltube / stills / scripts</div>
+          <div class="callout"><b>02</b> gen · lustify → seedance · el sts</div>
+          <div class="callout"><b>03</b> ship · site + x · stash vault</div>
+        </div>
+      </aside>
+    </header>
+
+    <div class="strip">
+      <div class="strip-grid">
+        <div class="item"><div class="lab">format</div><div class="val">vertical desk brief</div></div>
+        <div class="item"><div class="lab">tone</div><div class="val">tech-news + face</div></div>
+        <div class="item"><div class="lab">orchestrator</div><div class="val">hermes / nico</div></div>
+        <div class="item"><div class="lab">spend</div><div class="val">no vast top-up until go</div></div>
+      </div>
+    </div>
+
+    <section>
+      <p class="mono sec-k">what ships</p>
+      <h2>three surfaces, one brain</h2>
+      <div class="grid-3">
+        <article class="card">
+          <span class="tag">site</span>
+          <h3>crush destination</h3>
+          <p>people land here after the hook. clean, sticky, hers — not a linktree dump.</p>
+        </article>
+        <article class="card">
+          <span class="tag">x</span>
+          <h3>@ToolTammy signal</h3>
+          <p>short clips, stack talk, agent drops. media.write when the reel is ready.</p>
+        </article>
+        <article class="card">
+          <span class="tag">lab</span>
+          <h3>ui collection</h3>
+          <p>engines and skills we actually installed — diagrams, mcp, motion packs.</p>
+        </article>
+      </div>
+      <p class="note">master lock: <em>videos are so tech news</em>. we keep the desk energy and the face — never invent fake metrics to sell it.</p>
+    </section>
+
+    <section>
+      <p class="mono sec-k">workbench</p>
+      <h2>how a clip leaves the desk</h2>
+      <div class="board">
+        <div class="lane">
+          <div class="lane-h">queue</div>
+          <ul>
+            <li><strong>still first</strong><span>9:16 plate before i2v</span><code>lustify-v8</code></li>
+            <li><strong>cheap motion</strong><span>seedance basic when under a dollar</span><code>~$0.21 lane</code></li>
+            <li><strong>voice</strong><span>tammy clone only — no baby / robot</span><code>eleven_v4_turbo · sts</code></li>
+          </ul>
+        </div>
+        <div class="lane">
+          <div class="lane-h">gates</div>
+          <ul>
+            <li><strong>ffmpeg map</strong><span>explicit video + audio streams, shortest</span><code>-map 0:v:0 -map 1:a:0</code></li>
+            <li><strong>lipsync ladder</strong><span>multitalk › latentsync › mouth anim</span><code>runpod key still empty</code></li>
+            <li><strong>next budget</strong><span>civit bj models + k3nk deepthroat when funded</span><code>master names $</code></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div>tooltammy · hallmark lumen night · workbench</div>
+      <div class="mono">skill nutlope/hallmark · no shadows · no mermaid · no invented stats</div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Awesome Opus 5.5 · ToolTammy remake</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#0a0a0a;--card:#161616;--line:rgba(255,255,255,.08);--tx:#fafafa;--mut:#a1a1aa;--acc:#f472b6;--teal:#2dd4bf}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',system-ui,sans-serif;line-height:1.45}
+a{color:var(--teal);text-decoration:none}.wrap{max-width:1000px;margin:0 auto;padding:24px 18px 64px}
+.pill{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);border:1px solid rgba(244,114,182,.4);padding:4px 10px;border-radius:999px}
+h1{font-size:clamp(26px,4vw,38px);margin:12px 0 8px}.sub{color:var(--mut);max-width:62ch}
+.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;margin:20px 0}
+@media(max-width:800px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.card .body{padding:16px 18px} video{width:100%;display:block;background:#000;aspect-ratio:9/16;max-height:70vh;object-fit:contain;margin:0 auto}
+.meta{color:var(--mut);font-size:13px}.btn{display:inline-flex;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:#111;color:var(--tx);font-size:13px;margin:4px 4px 0 0}
+.btn.p{background:var(--acc);color:#3b0719;border:0;font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.tag{font-family:'IBM Plex Mono',monospace;font-size:11px;border:1px solid var(--line);padding:3px 8px;border-radius:6px;color:var(--mut)}
+.featgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-top:12px}
+.fcard{background:#111;border:1px solid var(--line);border-radius:10px;padding:10px;font-size:12px}
+.fcard img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px;background:#000;margin-bottom:6px}
+.fcard b{display:block;font-size:12px;margin-bottom:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a href="../">← UI collection</a>
+  <div style="margin-top:14px" class="pill">yihui-dev · 703 prompts · 4.8k★ · remade</div>
+  <h1>Awesome Opus 5.5 Videos</h1>
+  <p class="sub">Viral Claude Opus animations as code. We cloned the prompt pack and shipped a live Tammy 15s showreel remake (GSAP/SVG) from the classic “go all out motion designer” pattern.</p>
+  <div>
+    <a class="btn p" href="https://github.com/yihui-dev/awesome-opus5-5-videos" target="_blank" rel="noopener">SOURCE</a>
+    <a class="btn" href="https://skillry.dev/ai-videos/opus-5-5" target="_blank" rel="noopener">Skillry gallery</a>
+    <a class="btn" href="remakes/tammy-showreel.html">Live HTML</a>
+    <a class="btn" href="remakes/tammy-showreel-15s.mp4">MP4</a>
+    <a class="btn" href="PROMPT_SOURCE.md">Provenance</a>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <video controls autoplay muted loop playsinline poster="remakes/tammy-showreel-still.jpg" src="remakes/tammy-showreel-15s.mp4"></video>
+      <div class="body">
+        <div class="meta">REMAKE · ToolTammy showreel · 15s · 720×1280 · captured via Playwright</div>
+        <h2 style="margin:8px 0 6px;font-size:20px">Come back for Tammy</h2>
+        <p class="meta">Pattern: miskinho / prasad-pilla style 15s showreel prompts → branded crush-stack beats (problem → product → stack → CTA).</p>
+        <div class="tags"><span class="tag">gsap</span><span class="tag">svg</span><span class="tag">canvas</span><span class="tag">vertical</span></div>
+      </div>
+    </div>
+    <div class="card"><div class="body">
+      <div class="meta">PACK STATS</div>
+      <p style="font-size:28px;font-weight:700;margin:8px 0">703 prompts</p>
+      <p class="meta">motion 369 · 3d 117 · explainer 116 · interactive 101</p>
+      <p class="meta" style="margin-top:14px">Local clone: <code>tooltammy/vendor/awesome-opus5-5-videos</code></p>
+      <p class="meta">How to use: open any <code>prompts/*.md</code>, copy Prompt block, ask agent for single HTML, record page.</p>
+      <h3 style="margin:18px 0 8px;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)">Sample featured (has Skillry remake)</h3>
+      <div class="featgrid" id="feat"></div>
+    </div></div>
+  </div>
+</div>
+<script>
+fetch('catalog-sample.json').then(r=>r.json()).then(d=>{
+  document.getElementById('feat').innerHTML=(d.featured||[]).slice(0,12).map(e=>`
+    <a class="fcard" href="${e.skillry_url||e.post_url||'#'}" target="_blank" rel="noopener">
+      ${e.poster_url?`<img src="${e.poster_url}" alt="" loading="lazy"/>`:''}
+      <b>@${e.author||e.slug}</b>
+      <span style="color:#a1a1aa">${e.category||''} · ${(e.tech_tags||[]).slice(0,2).join(' · ')}</span>
+    </a>`).join('');
+}).catch(()=>{});
+</script>
+</body>
+</html>

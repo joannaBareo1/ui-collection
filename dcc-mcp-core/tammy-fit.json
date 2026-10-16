@@ -1,0 +1,223 @@
+[
+  {
+    "name": "dcc-mcp-kdenlive",
+    "dcc": [
+      "kdenlive"
+    ],
+    "description": "Kdenlive adapter with 27 typed project, media, timeline, effect, catalog, export, interchange, native and setup tools, plus shared DCC-CUA editor control",
+    "url": "https://github.com/dcc-mcp/dcc-mcp-kdenlive",
+    "version": "0.1.2",
+    "pip": "dcc-mcp-kdenlive",
+    "tags": [
+      "adapter",
+      "kdenlive",
+      "official",
+      "video-editing",
+      "mlt"
+    ]
+  },
+  {
+    "name": "dcc-mcp-blender",
+    "dcc": [
+      "blender"
+    ],
+    "description": "Core Blender adapter for DCC-MCP \u2014 Blender add-on with in-process MCP server",
+    "url": "https://github.com/dcc-mcp/dcc-mcp-blender",
+    "version": "0.1.43",
+    "pip": "dcc-mcp-blender",
+    "tags": [
+      "adapter",
+      "blender",
+      "official",
+      "pip",
+      "addon",
+      "core"
+    ]
+  },
+  {
+    "name": "dcc-mcp-photoshop",
+    "dcc": [
+      "photoshop"
+    ],
+    "description": "Core Photoshop adapter for DCC-MCP \u2014 Python bridge for a Photoshop UXP plugin with one-click installer",
+    "url": "https://github.com/dcc-mcp/dcc-mcp-photoshop",
+    "version": "0.1.37",
+    "pip": "dcc-mcp-photoshop",
+    "tags": [
+      "adapter",
+      "photoshop",
+      "official",
+      "pip",
+      "uxp",
+      "core",
+      "setup"
+    ]
+  },
+  {
+    "name": "dcc-mcp-premiere",
+    "dcc": [
+      "premiere"
+    ],
+    "description": "Adobe Premiere Pro adapter for DCC-MCP",
+    "url": "https://github.com/dcc-mcp/dcc-mcp-premiere",
+    "version": "0.5.0",
+    "pip": "dcc-mcp-premiere",
+    "tags": [
+      "adapter",
+      "premiere",
+      "official",
+      "pip",
+      "editing"
+    ]
+  },
+  {
+    "name": "dcc-mcp-aftereffects",
+    "dcc": [
+      "aftereffects",
+      "after-effects",
+      "after effects"
+    ],
+    "description": "Adobe After Effects adapter with typed project, layer, render queue, and official DOM workflows",
+    "url": "https://github.com/dcc-mcp/dcc-mcp-aftereffects",
+    "version": "0.6.0",
+    "pip": "dcc-mcp-aftereffects",
+    "tags": [
+      "adapter",
+      "aftereffects",
+      "after-effects",
+      "official",
+      "pip",
+      "cep",
+      "motion-graphics"
+    ]
+  },
+  {
+    "name": "dcc-mcp-gimp",
+    "dcc": [
+      "gimp"
+    ],
+    "description": "GIMP 3 adapter with typed image, layer, save, and production export workflows",
+    "url": "https://github.com/dcc-mcp/dcc-mcp-gimp",
+    "version": "0.4.1",
+    "pip": "dcc-mcp-gimp",
+    "tags": [
+      "adapter",
+      "gimp",
+      "official",
+      "pip",
+      "image-editing",
+      "painting"
+    ]
+  },
+  {
+    "name": "dcc-mcp-krita",
+    "dcc": [
+      "krita"
+    ],
+    "description": "Krita adapter with typed document, layer, painting, save, and export workflows",
+    "url": "https://github.com/dcc-mcp/dcc-mcp-krita",
+    "version": "0.3.0",
+    "pip": "dcc-mcp-krita",
+    "tags": [
+      "adapter",
+      "krita",
+      "official",
+      "pip",
+      "digital-painting",
+      "image-editing"
+    ]
+  },
+  {
+    "name": "dcc-mcp-obs",
+    "dcc": [
+      "obs"
+    ],
+    "description": "Native OBS Studio adapter with exact-process scene and source inspection plus typed recording control",
+    "url": "https://github.com/dcc-mcp/dcc-mcp-obs",
+    "version": "1.4.0",
+    "pip": "dcc-mcp-obs",
+    "tags": [
+      "adapter",
+      "obs",
+      "official",
+      "pip",
+      "recording",
+      "streaming",
+      "broadcast"
+    ]
+  },
+  {
+    "name": "dcc-mcp-comfyui",
+    "dcc": [
+      "comfyui",
+      "comfy-ui"
+    ],
+    "description": "ComfyUI adapter with 21 typed workflow, catalog, queue, and artifact tools",
+    "url": "https://github.com/dcc-mcp/dcc-mcp-comfyui",
+    "version": "0.1.1",
+    "pip": "dcc-mcp-comfyui",
+    "tags": [
+      "adapter",
+      "comfyui",
+      "official",
+      "pip",
+      "node-graph",
+      "image-generation"
+    ]
+  },
+  {
+    "name": "dcc-mcp-touchdesigner",
+    "dcc": [
+      "touchdesigner"
+    ],
+    "description": "TouchDesigner adapter with 19 typed operator graph, parameter, DAT, timeline, capture, and project tools dispatched on the main thread",
+    "url": "https://github.com/dcc-mcp/dcc-mcp-touchdesigner",
+    "version": "0.1.1",
+    "pip": "dcc-mcp-touchdesigner",
+    "tags": [
+      "adapter",
+      "touchdesigner",
+      "official",
+      "pip",
+      "node-graph",
+      "real-time",
+      "interactive-media"
+    ]
+  },
+  {
+    "name": "dcc-mcp-capcut",
+    "dcc": [
+      "capcut"
+    ],
+    "description": "CapCut Desktop adapter for DCC-MCP \u2014 compile edit plans, assemble video timelines and verify exports through a typed local bridge",
+    "url": "https://github.com/dcc-mcp/dcc-mcp-capcut",
+    "version": "0.5.0",
+    "pip": "dcc-mcp-capcut",
+    "tags": [
+      "adapter",
+      "capcut",
+      "official",
+      "pip",
+      "video-editing",
+      "timeline"
+    ]
+  },
+  {
+    "name": "dcc-mcp-openscreen",
+    "dcc": [
+      "openscreen"
+    ],
+    "description": "OpenScreen adapter for DCC-MCP \u2014 capture discovery, screen recording and video export workflows through typed CLI operations",
+    "url": "https://github.com/dcc-mcp/dcc-mcp-openscreen",
+    "version": "0.1.1",
+    "pip": "dcc-mcp-openscreen",
+    "tags": [
+      "adapter",
+      "openscreen",
+      "official",
+      "pip",
+      "screen-recording",
+      "capture"
+    ]
+  }
+]

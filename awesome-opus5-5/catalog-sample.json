@@ -1,0 +1,397 @@
+{
+  "total": 703,
+  "categories": {
+    "explainer": 116,
+    "motion": 369,
+    "interactive": 101,
+    "3d": 117
+  },
+  "featured": [
+    {
+      "slug": "twoclipping-402193",
+      "author": "twoclipping",
+      "author_url": "https://x.com/twoclipping",
+      "post_url": "https://x.com/twoclipping/status/2103273003555402193",
+      "category": "motion",
+      "tech_tags": [
+        "svg"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/twoclipping-402193/original.9c664f011f.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/twoclipping-402193",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "anabology-491441",
+      "author": "anabology",
+      "author_url": "https://x.com/anabology",
+      "post_url": "https://x.com/anabology/status/2103534482930491441",
+      "category": "motion",
+      "tech_tags": [
+        "canvas",
+        "ai-image"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/anabology-491441/original.be0a03ecf7.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/anabology-491441",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "moritzkremb-466494",
+      "author": "moritzkremb",
+      "author_url": "https://x.com/moritzkremb",
+      "post_url": "https://x.com/moritzkremb/status/2103066071838466494",
+      "category": "motion",
+      "tech_tags": [
+        "svg",
+        "gsap"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/moritzkremb-466494/original.dc5bd867e2.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/moritzkremb-466494",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "melvynx-638493",
+      "author": "melvynx",
+      "author_url": "https://x.com/melvynx",
+      "post_url": "https://x.com/melvynx/status/2103714680577638493",
+      "category": "motion",
+      "tech_tags": [
+        "canvas",
+        "svg",
+        "gsap"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/melvynx-638493/original.93566e677b.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/melvynx-638493",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "ajith-io-208546",
+      "author": "ajith_io",
+      "author_url": "https://x.com/ajith_io",
+      "post_url": "https://x.com/ajith_io/status/2103469807375208546",
+      "category": "motion",
+      "tech_tags": [
+        "canvas",
+        "svg",
+        "gsap",
+        "css"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/ajith-io-208546/original.e545567a26.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/ajith-io-208546",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "daniel-mac8-306214",
+      "author": "daniel_mac8",
+      "author_url": "https://x.com/daniel_mac8",
+      "post_url": "https://x.com/daniel_mac8/status/2103824976713306214",
+      "category": "motion",
+      "tech_tags": [
+        "svg",
+        "gsap"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/daniel-mac8-306214/original.0a435a156b.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/daniel-mac8-306214",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "prasad-pilla-496049",
+      "author": "prasad_pilla",
+      "author_url": "https://x.com/prasad_pilla",
+      "post_url": "https://x.com/prasad_pilla/status/2103728953785496049",
+      "category": "motion",
+      "tech_tags": [
+        "svg",
+        "gsap"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/prasad-pilla-496049/original.398382b93d.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/prasad-pilla-496049",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "itsolelehmann-762215",
+      "author": "itsolelehmann",
+      "author_url": "https://x.com/itsolelehmann",
+      "post_url": "https://x.com/itsolelehmann/status/2103124033365762215",
+      "category": "motion",
+      "tech_tags": [
+        "canvas"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/itsolelehmann-762215/original.5af36203cb.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/itsolelehmann-762215",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "ishaaqahamed-107563",
+      "author": "Ishaaqahamed",
+      "author_url": "https://x.com/Ishaaqahamed",
+      "post_url": "https://x.com/Ishaaqahamed/status/2103837917538107563",
+      "category": "motion",
+      "tech_tags": [
+        "canvas"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/ishaaqahamed-107563/original.56f7461a25.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/ishaaqahamed-107563",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "heyiammallik-293397",
+      "author": "heyiammallik",
+      "author_url": "https://x.com/heyiammallik",
+      "post_url": "https://x.com/heyiammallik/status/2103837803587293397",
+      "category": "motion",
+      "tech_tags": [
+        "threejs",
+        "canvas"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/heyiammallik-293397/original.7068f7995f.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/heyiammallik-293397",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "ann-nnng-852885",
+      "author": "ann_nnng",
+      "author_url": "https://x.com/ann_nnng",
+      "post_url": "https://x.com/ann_nnng/status/2103723183899852885",
+      "category": "motion",
+      "tech_tags": [
+        "canvas"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/ann-nnng-852885/original.71bdae79b3.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/ann-nnng-852885",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "ajith-io-615243",
+      "author": "ajith_io",
+      "author_url": "https://x.com/ajith_io",
+      "post_url": "https://x.com/ajith_io/status/2103541149709615243",
+      "category": "motion",
+      "tech_tags": [
+        "canvas",
+        "particles"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/ajith-io-615243/original.cd413c6a04.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/ajith-io-615243",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "0xfemyn-137833",
+      "author": "0xfemyn",
+      "author_url": "https://x.com/0xfemyn",
+      "post_url": "https://x.com/0xfemyn/status/2103796337041137833",
+      "category": "motion",
+      "tech_tags": [
+        "canvas",
+        "svg",
+        "css"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/0xfemyn-137833/original.a64edb613d.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/0xfemyn-137833",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "prasenx-693512",
+      "author": "prasenx",
+      "author_url": "https://x.com/prasenx",
+      "post_url": "https://x.com/prasenx/status/2103538744695693512",
+      "category": "motion",
+      "tech_tags": [
+        "shader",
+        "canvas",
+        "audio"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/prasenx-693512/original.515f6345fb.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/prasenx-693512",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "brainextends-606193",
+      "author": "brainextends",
+      "author_url": "https://x.com/brainextends",
+      "post_url": "https://x.com/brainextends/status/2103801834930606193",
+      "category": "motion",
+      "tech_tags": [
+        "shader",
+        "svg"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/brainextends-606193/original.f7353b2aa2.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/brainextends-606193",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "pankajkumar-dev-718609",
+      "author": "pankajkumar_dev",
+      "author_url": "https://x.com/pankajkumar_dev",
+      "post_url": "https://x.com/pankajkumar_dev/status/2103502614134718609",
+      "category": "motion",
+      "tech_tags": [
+        "canvas"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/pankajkumar-dev-718609/original.4dd61f6a13.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/pankajkumar-dev-718609",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "nolkeeg-635633",
+      "author": "nolkeeg",
+      "author_url": "https://x.com/nolkeeg",
+      "post_url": "https://x.com/nolkeeg/status/2103841917603635633",
+      "category": "motion",
+      "tech_tags": [
+        "canvas",
+        "particles"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/nolkeeg-635633/original.8a27593d3a.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/nolkeeg-635633",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "1littlecoder-378066",
+      "author": "1littlecoder",
+      "author_url": "https://x.com/1littlecoder",
+      "post_url": "https://x.com/1littlecoder/status/2103746736980378066",
+      "category": "motion",
+      "tech_tags": [
+        "canvas"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/1littlecoder-378066/original.bbf4b625ee.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/1littlecoder-378066",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "ezshine-750731",
+      "author": "ezshine",
+      "author_url": "https://x.com/ezshine",
+      "post_url": "https://x.com/ezshine/status/2103501705698750731",
+      "category": "motion",
+      "tech_tags": [
+        "canvas",
+        "svg",
+        "gsap"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/ezshine-750731/original.c74c7581aa.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/ezshine-750731",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "songkeys-384673",
+      "author": "songkeys",
+      "author_url": "https://x.com/songkeys",
+      "post_url": "https://x.com/songkeys/status/2102743212922384673",
+      "category": "motion",
+      "tech_tags": [
+        "canvas"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/songkeys-384673/original.dbb3fca63c.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/songkeys-384673",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "jackfriks-338762",
+      "author": "jackfriks",
+      "author_url": "https://x.com/jackfriks",
+      "post_url": "https://x.com/jackfriks/status/2103132260589338762",
+      "category": "motion",
+      "tech_tags": [
+        "canvas",
+        "svg",
+        "gsap"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/jackfriks-338762/original.1704154ebe.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/jackfriks-338762",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "sab8a-475686",
+      "author": "sab8a",
+      "author_url": "https://x.com/sab8a",
+      "post_url": "https://x.com/sab8a/status/2103144778481475686",
+      "category": "motion",
+      "tech_tags": [
+        "canvas",
+        "ai-image"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/sab8a-475686/original.550678accf.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/sab8a-475686",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "itisrazak-332386",
+      "author": "itisRazak",
+      "author_url": "https://x.com/itisRazak",
+      "post_url": "https://x.com/itisRazak/status/2103517930424332386",
+      "category": "motion",
+      "tech_tags": [
+        "threejs",
+        "canvas"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/itisrazak-332386/original.db024c3c41.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/itisrazak-332386",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    },
+    {
+      "slug": "viktoroddy-402509",
+      "author": "viktoroddy",
+      "author_url": "https://x.com/viktoroddy",
+      "post_url": "https://x.com/viktoroddy/status/2103802280617402509",
+      "category": "motion",
+      "tech_tags": [
+        "canvas",
+        "svg",
+        "gsap",
+        "css"
+      ],
+      "poster_url": "https://media.skillry.dev/opus-5-5/viktoroddy-402509/original.31093e9638.webp",
+      "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/viktoroddy-402509",
+      "has_remake": true,
+      "prompt_partial": false,
+      "added": "2026-09-26"
+    }
+  ]
+}

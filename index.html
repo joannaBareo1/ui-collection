@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ToolTammy · UI Collection</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#0a0a0a;--card:#161616;--line:rgba(255,255,255,.08);--tx:#fafafa;--mut:#a1a1aa;--acc:#2dd4bf;--pur:#a78bfa;--pink:#f472b6}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--tx);font-family:'IBM Plex Sans',system-ui,sans-serif;line-height:1.45}
+a{color:var(--acc);text-decoration:none} .wrap{max-width:1100px;margin:0 auto;padding:24px 20px 64px}
+nav{display:flex;justify-content:space-between;margin-bottom:28px} .word{font-weight:700} .word span{color:var(--acc)}
+.pill{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);border:1px solid rgba(45,212,191,.35);padding:4px 10px;border-radius:999px;margin-bottom:12px}
+h1{font-size:clamp(28px,5vw,42px);margin:0 0 8px} .sub{color:var(--mut);max-width:56ch;margin:0 0 18px}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:13px} .stat b{display:block;font-size:18px}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
+@media(max-width:900px){.feat{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.card .body{padding:14px 16px} .card h2{margin:0 0 6px;font-size:18px} .meta{color:var(--mut);font-size:12px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0} .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;border:1px solid var(--line);padding:3px 8px;border-radius:6px;color:var(--mut)}
+.btn{display:inline-flex;padding:7px 11px;border-radius:8px;border:1px solid var(--line);background:#111;color:var(--tx);font-size:12px;margin:2px 2px 0 0}
+.btn.p{background:var(--acc);color:#042f2e;border:0;font-weight:600}
+.btn.pink{background:var(--pink);color:#3b0719;border:0;font-weight:600}
+.btn.pur{background:var(--pur);color:#1e1035;border:0;font-weight:600}
+video,img.ban{width:100%;display:block;background:#000;aspect-ratio:16/10;object-fit:cover}
+img.ban{aspect-ratio:2.2/1;object-fit:contain;background:#0f0f12;padding:8px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}}
+.mini h3{margin:0 0 6px;font-size:16px} .mini p{margin:0;color:var(--mut);font-size:13px}
+.foot{margin-top:40px;color:var(--mut);font-size:12px;border-top:1px solid var(--line);padding-top:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="word">tool<span>tammy</span> · ui collection</div><div class="meta">tools · skills · prompts</div></nav>
+  <div class="pill">Curated · agent-ready</div>
+  <h1>UI / tool collection</h1>
+  <p class="sub">Engines, skill packs, and Opus motion prompts we actually ran. Crush content first.</p>
+  <div class="stats">
+    <div class="stat"><b id="n-total">3</b>TOTAL</div>
+    <div class="stat"><b id="n-feat">3</b>FEATURED</div>
+    <div class="feat">
+      <div class="ban" style="display:flex;align-items:center;justify-content:center;height:120px;background:linear-gradient(135deg,#0d0d18,#1a1408);color:#e8b84a;font-weight:700;letter-spacing:.06em">HALLMARK</div>
+      <div class="body">
+        <div class="meta">nutlope · lumen night · ~30k★</div>
+        <h2>hallmark</h2>
+        <p>Anti-slop design skill. Tammy tech-news desk demo.</p>
+        <a class="btn pur" href="hallmark/demo.html">OPEN DEMO</a>
+        <a class="btn" href="https://github.com/Nutlope/hallmark" target="_blank" rel="noopener">SOURCE</a>
+      </div>
+    </div>
+    <div class="feat">
+      <div class="ban" style="display:flex;align-items:center;justify-content:center;height:120px;background:linear-gradient(135deg,#0a0a0a,#2a1020);color:#ff4d8d;font-weight:700;letter-spacing:.04em">DIAGRAM</div>
+      <div class="body">
+        <div class="meta">cathrynlavery · 45 types · ~56k★</div>
+        <h2>diagram-design</h2>
+        <p>Editorial HTML+SVG diagrams. Tammy content-stack demo.</p>
+        <a class="btn pur" href="diagram-design/demo.html">OPEN DEMO</a>
+        <a class="btn" href="https://github.com/cathrynlavery/diagram-design" target="_blank" rel="noopener">SOURCE</a>
+      </div>
+    </div>
+    <div class="feat">
+      <div class="ban" style="display:flex;align-items:center;justify-content:center;height:120px;background:linear-gradient(135deg,#0d1f14,#1a0a12);color:#7cfc9a;font-weight:700;letter-spacing:.04em">DCC-MCP</div>
+      <div class="body">
+        <div class="meta">gateway · 47 adapters · health ok</div>
+        <h2>dcc-mcp-core</h2>
+        <p>Agent control plane for ComfyUI, CapCut, TD, OBS, AE…</p>
+        <a class="btn pur" href="dcc-mcp-core/demo.html">OPEN DEMO</a>
+        <a class="btn" href="https://github.com/dcc-mcp/dcc-mcp-core" target="_blank" rel="noopener">SOURCE</a>
+      </div>
+    </div>
+    <div class="stat"><b>live</b>STATUS</div>
+  </div>
+  <section class="feat">
+    <div class="card">
+      <video controls autoplay muted loop playsinline poster="awesome-opus5-5/remakes/tammy-showreel-still.jpg" src="awesome-opus5-5/remakes/tammy-showreel-15s.mp4"></video>
+      <div class="body">
+        <div class="meta">Opus 5.5 prompt pack · 15s remake</div>
+        <h2>Awesome Opus 5.5 Videos</h2>
+        <div class="tags"><span class="tag">703 prompts</span><span class="tag">gsap</span><span class="tag">4.8k★</span></div>
+        <a class="btn pink" href="awesome-opus5-5/demo.html">OPEN DEMO</a>
+        <a class="btn" href="https://github.com/yihui-dev/awesome-opus5-5-videos" target="_blank" rel="noopener">SOURCE</a>
+      </div>
+    </div>
+    <div class="card">
+      <video controls autoplay muted loop playsinline poster="manimgx/tammy-manimgx-demo.storyboard.png" src="manimgx/tammy-manimgx-demo.mp4"></video>
+      <div class="body">
+        <div class="meta">ManimGX · 7s · 11s wall</div>
+        <h2>ManimGX</h2>
+        <div class="tags"><span class="tag">rust</span><span class="tag">math</span><span class="tag">agents</span></div>
+        <a class="btn p" href="https://github.com/academa-labs/manimgx" target="_blank" rel="noopener">SOURCE</a>
+        <a class="btn" href="manimgx/tammy-manimgx-demo.mp4">MP4</a>
+      </div>
+    </div>
+    <div class="card">
+      <img class="ban" src="social-media-skills/banner.svg" alt="Social Media Skills"/>
+      <div class="body">
+        <div class="meta">charlie947 · 17 skills installed</div>
+        <h2>Social Media Skills</h2>
+        <div class="tags"><span class="tag">hooks</span><span class="tag">reels</span><span class="tag">linkedin</span></div>
+        <a class="btn pur" href="social-media-skills/demo.html">OPEN DEMO</a>
+        <a class="btn" href="https://github.com/charlie947/social-media-skills" target="_blank" rel="noopener">SOURCE</a>
+      </div>
+    </div>
+  </section>
+  <h2 style="font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin:0 0 12px">Collection grid</h2>
+  <div class="grid" id="grid"></div>
+  <div class="foot">Independent ToolTammy directory. Data: index.json</div>
+</div>
+<script>
+fetch('index.json').then(r=>r.json()).then(d=>{
+  document.getElementById('n-total').textContent=d.entries.length;
+  document.getElementById('n-feat').textContent=d.entries.filter(e=>e.featured).length;
+  document.getElementById('grid').innerHTML=d.entries.map(e=>`
+    <div class="card mini"><div class="body">
+      <h3>${e.title}</h3>
+      <p>${(e.description||'').slice(0,110)}…</p>
+      <div class="tags">${(e.topic||[]).slice(0,4).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+      <div>
+        <a class="btn p" href="${e.source}" target="_blank" rel="noopener">SOURCE</a>
+        ${e.demo?`<a class="btn" href="${e.demo}">Demo</a>`:''}
+        ${e.demo_video?`<a class="btn" href="${e.demo_video}">MP4</a>`:''}
+      </div>
+    </div></div>`).join('');
+});
+</script>
+</body>
+</html>

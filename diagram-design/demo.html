@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>diagram-design · ToolTammy</title>
+<style>
+:root{--bg:#0a0a0a;--card:#161616;--bd:rgba(255,255,255,.08);--tx:#fafafa;--mu:#a1a1aa;--acc:#ff4d8d;--ok:#7cfc9a}
+*{box-sizing:border-box}body{margin:0;font-family:ui-sans-serif,system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.45}
+a{color:var(--ok)} .wrap{max-width:980px;margin:0 auto;padding:28px 18px 64px}
+.pill{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mu);border:1px solid var(--bd);padding:4px 10px;border-radius:999px}
+h1{font-size:clamp(1.6rem,4vw,2.3rem);margin:.6rem 0 .4rem;letter-spacing:-.02em}
+.sub{color:var(--mu);max-width:58ch}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px}
+.stat{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:10px 14px}
+.stat b{display:block;font-size:1.2rem}.stat span{font-size:11px;color:var(--mu);letter-spacing:.08em;text-transform:uppercase}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 24px}
+.btn{display:inline-block;padding:8px 12px;border-radius:8px;border:1px solid var(--bd);background:#1c1c1c;color:var(--tx);text-decoration:none;font-size:.85rem}
+.btn.primary{background:#2a1020;border-color:rgba(255,77,141,.5);color:#ffb3cb}
+.frame{border:1px solid var(--bd);border-radius:12px;overflow:hidden;background:#111}
+iframe{width:100%;height:720px;border:0;background:#0a0a0a}
+.note{border-left:3px solid var(--acc);padding:8px 12px;color:var(--mu);margin:16px 0;background:#120a0f;font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="pill">UI collection · agent skill</span>
+  <h1>diagram-design</h1>
+  <p class="sub">Cathryn Lavery’s agent skill: 45 diagram types as self-contained HTML+SVG. No shadows. No Mermaid slop. We installed the skill and drew ToolTammy’s real content stack in Tammy pink/black.</p>
+  <div class="stats">
+    <div class="stat"><b>~56k★</b><span>github</span></div>
+    <div class="stat"><b>2.6</b><span>skill ver</span></div>
+    <div class="stat"><b>45</b><span>types</span></div>
+    <div class="stat"><b>Tammy</b><span>skin demo</span></div>
+  </div>
+  <div class="row">
+    <a class="btn primary" href="tammy-content-stack.html">OPEN TAMMY DIAGRAM</a>
+    <a class="btn" href="https://github.com/cathrynlavery/diagram-design">SOURCE</a>
+    <a class="btn" href="https://diagramdesign.dev">Website</a>
+    <a class="btn" href="https://cathrynlavery.github.io/diagram-design/">Gallery</a>
+  </div>
+  <div class="note">Hermes skill path: <code>profiles/nico/skills/creative/diagram-design/</code> · Install: <code>npx skills add cathrynlavery/diagram-design</code></div>
+  <div class="frame"><iframe src="tammy-content-stack.html" title="ToolTammy content stack architecture"></iframe></div>
+</div>
+</body>
+</html>

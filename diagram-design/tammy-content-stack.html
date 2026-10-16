@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToolTammy content stack · Architecture · Diagram Design</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      /* Tammy skin — dark paper + crush pink accent (not shipped defaults) */
+      --paper: #0a0a0a; --paper-2: #161616; --ink: #fafafa; --muted: #a1a1aa;
+      --soft: #8b8b96; --rule: rgba(250,250,250,0.12); --accent: #ff4d8d;
+      --accent-tint: rgba(255,77,141,0.12); --link: #7cfc9a;
+      --sans: 'Geist', system-ui, sans-serif; --serif: 'Instrument Serif', serif;
+      --mono: 'Geist Mono', ui-monospace, monospace;
+    }
+    body { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2.5rem 1.5rem; background: var(--paper); color: var(--ink); font-family: var(--sans); }
+    .frame { width: 100%; max-width: 1080px; }
+    .eyebrow { margin-bottom: 0.5rem; color: var(--muted); font: 500 0.66rem/1 var(--mono); letter-spacing: 0.18em; text-transform: uppercase; }
+    h1 { margin-bottom: 0.35rem; color: var(--ink); font: 400 clamp(1.5rem, 2.2vw + 0.8rem, 2rem)/1.15 var(--serif); letter-spacing: -0.02em; }
+    .callout { margin-bottom: 1.25rem; color: var(--soft); font: italic 400 0.95rem/1.35 var(--serif); max-width: 52ch; }
+    .diagram-container { width: 100%; overflow-x: auto; border: 1px solid var(--rule); border-radius: 10px; background: var(--paper-2); }
+    svg { display: block; width: 100%; min-width: 960px; }
+    .node-title { fill: var(--ink); font: 600 12px var(--sans); text-anchor: middle; }
+    .node-sub { fill: var(--muted); font: 400 9px var(--mono); text-anchor: middle; }
+    .zone-label { fill: var(--soft); font: 500 7px var(--mono); letter-spacing: 0.14em; text-anchor: middle; }
+    .arrow-label { fill: var(--muted); font: 400 8px var(--mono); letter-spacing: 0.06em; text-anchor: middle; }
+    .summary { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 10px; margin-top: 1.1rem; }
+    .card { border: 1px solid var(--rule); border-radius: 8px; padding: 12px 14px; background: #111; }
+    .card h3 { font: 600 11px/1.2 var(--sans); margin-bottom: 6px; }
+    .card p { font: 400 12px/1.4 var(--sans); color: var(--muted); }
+    .card.focal { border-color: rgba(255,77,141,0.45); background: rgba(255,77,141,0.06); }
+    .card.focal h3 { color: var(--accent); }
+    footer { margin-top: 1.25rem; color: var(--soft); font: 400 11px/1.4 var(--mono); }
+    footer a { color: var(--link); }
+  </style>
+</head>
+<body>
+  <main class="frame">
+    <p class="eyebrow">Architecture · Diagram Design · Tammy skin</p>
+    <h1>ToolTammy content stack</h1>
+    <p class="callout">Crush-first pipeline: ingest → gen → lipsync/edit → ship. Hermes is the only brain; Venice/EL do the heavy lift; site + X are the face.</p>
+
+    <div class="diagram-container">
+    <svg viewBox="0 0 960 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t-title t-desc">
+      <title id="t-title">ToolTammy content stack architecture</title>
+      <desc id="t-desc">Hermes agent orchestrates ingest sources into Venice and ElevenLabs generation, then ffmpeg and lipsync edit, then distribution to site, X, and Stash.</desc>
+      <defs>
+        <marker id="arr-m" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#a1a1aa"/></marker>
+        <marker id="arr-a" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#ff4d8d"/></marker>
+        <marker id="arr-l" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#7cfc9a"/></marker>
+        <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.7" fill="rgba(250,250,250,0.06)"/></pattern>
+      </defs>
+
+      <rect width="960" height="560" fill="#0a0a0a"/>
+      <rect width="960" height="560" fill="url(#dots)"/>
+
+      <!-- zones (bg → zones → arrows → nodes) -->
+      <rect x="40" y="48" width="200" height="464" rx="8" fill="rgba(250,250,250,0.02)" stroke="rgba(250,250,250,0.10)" stroke-width="0.8"/>
+      <rect x="56" y="52" width="52" height="12" rx="2" fill="#0a0a0a"/>
+      <text x="82" y="61" class="zone-label">INGEST</text>
+
+      <rect x="272" y="48" width="248" height="220" rx="8" fill="rgba(250,250,250,0.02)" stroke="rgba(250,250,250,0.10)" stroke-width="0.8"/>
+      <rect x="288" y="52" width="72" height="12" rx="2" fill="#0a0a0a"/>
+      <text x="324" y="61" class="zone-label">GENERATE</text>
+
+      <rect x="272" y="292" width="248" height="220" rx="8" fill="rgba(250,250,250,0.02)" stroke="rgba(250,250,250,0.10)" stroke-width="0.8"/>
+      <rect x="288" y="296" width="52" height="12" rx="2" fill="#0a0a0a"/>
+      <text x="314" y="305" class="zone-label">EDIT</text>
+
+      <rect x="552" y="48" width="200" height="464" rx="8" fill="rgba(250,250,250,0.02)" stroke="rgba(250,250,250,0.10)" stroke-width="0.8"/>
+      <rect x="568" y="52" width="88" height="12" rx="2" fill="#0a0a0a"/>
+      <text x="612" y="61" class="zone-label">DISTRIBUTE</text>
+
+      <rect x="784" y="180" width="140" height="200" rx="8" fill="rgba(255,77,141,0.06)" stroke="rgba(255,77,141,0.35)" stroke-width="1"/>
+      <rect x="800" y="184" width="96" height="12" rx="2" fill="#0a0a0a"/>
+      <text x="848" y="193" class="zone-label" style="fill:#ff4d8d">ORCHESTRATE</text>
+
+      <!-- arrows first -->
+      <!-- MelTube → Venice -->
+      <path d="M240 120 H264 Q272 120 272 128 V148" fill="none" stroke="#a1a1aa" stroke-width="1.2" marker-end="url(#arr-m)"/>
+      <!-- stills → lustify -->
+      <path d="M240 220 H264 Q272 220 272 212 V200" fill="none" stroke="#a1a1aa" stroke-width="1.2" marker-end="url(#arr-m)"/>
+      <!-- scripts → EL -->
+      <path d="M240 360 H264 Q272 360 272 352 V340" fill="none" stroke="#a1a1aa" stroke-width="1.2" marker-end="url(#arr-m)"/>
+      <!-- Venice → ffmpeg -->
+      <path d="M396 268 V284" fill="none" stroke="#a1a1aa" stroke-width="1.2" marker-end="url(#arr-m)"/>
+      <!-- EL → lipsync -->
+      <path d="M396 388 V404" fill="none" stroke="#a1a1aa" stroke-width="1.2" marker-end="url(#arr-m)"/>
+      <!-- ffmpeg → site -->
+      <path d="M520 360 H544 Q552 360 552 352 V300" fill="none" stroke="#7cfc9a" stroke-width="1.2" marker-end="url(#arr-l)"/>
+      <rect x="500" y="332" width="40" height="12" rx="2" fill="#0a0a0a"/>
+      <text x="520" y="341" class="arrow-label" fill="#7cfc9a">ship</text>
+      <!-- lipsync → X -->
+      <path d="M520 440 H544 Q552 440 552 432 V400" fill="none" stroke="#a1a1aa" stroke-width="1.2" marker-end="url(#arr-m)"/>
+      <!-- site → stash dashed -->
+      <path d="M652 300 V380" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arr-m)"/>
+      <!-- Hermes control dashed into gen/edit/dist -->
+      <path d="M784 280 H760 Q752 280 752 272 V200 H520" fill="none" stroke="#ff4d8d" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arr-a)"/>
+      <rect x="700" y="248" width="56" height="12" rx="2" fill="#0a0a0a"/>
+      <text x="728" y="257" class="arrow-label" fill="#ff4d8d">command</text>
+      <path d="M784 300 H760 Q752 300 752 308 V420 H520" fill="none" stroke="#ff4d8d" stroke-width="1" stroke-dasharray="4,3"/>
+
+      <!-- INGEST nodes -->
+      <rect x="64" y="88" width="152" height="64" rx="6" fill="rgba(250,250,250,0.04)" stroke="rgba(250,250,250,0.22)"/>
+      <text x="140" y="114" class="node-title">MelTube</text>
+      <text x="140" y="132" class="node-sub">:6767 host.docker</text>
+
+      <rect x="64" y="188" width="152" height="64" rx="6" fill="rgba(250,250,250,0.04)" stroke="rgba(250,250,250,0.22)"/>
+      <text x="140" y="214" class="node-title">Stills / avatar</text>
+      <text x="140" y="232" class="node-sub">canonical · RGB plate</text>
+
+      <rect x="64" y="328" width="152" height="64" rx="6" fill="rgba(250,250,250,0.04)" stroke="rgba(250,250,250,0.22)"/>
+      <text x="140" y="354" class="node-title">Scripts / VO</text>
+      <text x="140" y="372" class="node-sub">lyrics · captions</text>
+
+      <rect x="64" y="428" width="152" height="56" rx="6" fill="rgba(250,250,250,0.04)" stroke="rgba(250,250,250,0.22)"/>
+      <text x="140" y="452" class="node-title">Civit LoRAs</text>
+      <text x="140" y="468" class="node-sub">BJ board · next $</text>
+
+      <!-- GENERATE -->
+      <rect x="296" y="100" width="200" height="72" rx="6" fill="rgba(250,250,250,0.04)" stroke="rgba(250,250,250,0.22)"/>
+      <text x="396" y="128" class="node-title">Venice i2v / t2i</text>
+      <text x="396" y="146" class="node-sub">lustify-v8 · seedance</text>
+      <text x="396" y="160" class="node-sub">~$0.21 under-$1 lane</text>
+
+      <rect x="296" y="196" width="200" height="56" rx="6" fill="rgba(250,250,250,0.04)" stroke="rgba(250,250,250,0.22)"/>
+      <text x="396" y="220" class="node-title">ElevenLabs clone</text>
+      <text x="396" y="236" class="node-sub">yFRiw… · v4_turbo / STS</text>
+
+      <!-- EDIT -->
+      <rect x="296" y="340" width="200" height="64" rx="6" fill="rgba(250,250,250,0.04)" stroke="rgba(250,250,250,0.22)"/>
+      <text x="396" y="366" class="node-title">ffmpeg reels</text>
+      <text x="396" y="384" class="node-sub">map 0:v + 1:a · 9:16</text>
+
+      <rect x="296" y="424" width="200" height="64" rx="6" fill="rgba(250,250,250,0.04)" stroke="rgba(250,250,250,0.22)"/>
+      <text x="396" y="450" class="node-title">Lipsync ladder</text>
+      <text x="396" y="468" class="node-sub">MultiTalk › LatentSync › mouth</text>
+
+      <!-- DISTRIBUTE -->
+      <rect x="576" y="120" width="152" height="72" rx="6" fill="rgba(124,252,154,0.08)" stroke="#7cfc9a" stroke-width="1.2"/>
+      <text x="652" y="148" class="node-title">tammy-home</text>
+      <text x="652" y="166" class="node-sub">GH Pages site</text>
+      <text x="652" y="180" class="node-sub">crush destination</text>
+
+      <rect x="576" y="240" width="152" height="64" rx="6" fill="rgba(250,250,250,0.04)" stroke="rgba(250,250,250,0.22)"/>
+      <text x="652" y="266" class="node-title">X @ToolTammy</text>
+      <text x="652" y="284" class="node-sub">xurl OAuth2 media</text>
+
+      <rect x="576" y="360" width="152" height="64" rx="6" fill="rgba(250,250,250,0.04)" stroke="rgba(250,250,250,0.22)"/>
+      <text x="652" y="386" class="node-title">Stash</text>
+      <text x="652" y="404" class="node-sub">:1338 / :9399 vault</text>
+
+      <rect x="576" y="448" width="152" height="48" rx="6" fill="rgba(250,250,250,0.04)" stroke="rgba(250,250,250,0.22)"/>
+      <text x="652" y="470" class="node-title">UI collection</text>
+      <text x="652" y="484" class="node-sub">demos · skills hub</text>
+
+      <!-- ORCHESTRATE focal -->
+      <rect x="800" y="220" width="108" height="120" rx="6" fill="rgba(255,77,141,0.14)" stroke="#ff4d8d" stroke-width="1.4"/>
+      <text x="854" y="268" class="node-title" fill="#ff4d8d">Hermes</text>
+      <text x="854" y="286" class="node-title" fill="#ff4d8d">NICO</text>
+      <text x="854" y="308" class="node-sub">skills · crons</text>
+      <text x="854" y="322" class="node-sub">Vast watch</text>
+    </svg>
+    </div>
+
+    <div class="summary">
+      <div class="card focal">
+        <h3>Focal</h3>
+        <p>Hermes/NICO owns routing. Pink = control plane only — not every box.</p>
+      </div>
+      <div class="card">
+        <h3>Cheap gen</h3>
+        <p>Venice lustify + seedance under $1. No Vast top-up until Master says.</p>
+      </div>
+      <div class="card">
+        <h3>Ship</h3>
+        <p>Site is the crush destination; X is the hook; Stash is the vault.</p>
+      </div>
+    </div>
+    <footer>
+      Built with <a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a> · type Architecture · size doc-inline · Tammy tokens (paper #0a0a0a · accent #ff4d8d) · not default skin.
+    </footer>
+  </main>
+</body>
+</html>
